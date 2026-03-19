@@ -55,3 +55,4 @@ if __name__  == "__main__":
     safe_box = DataVault()
     spy_007 = WebSpy(AIM_URL,safe_box)
     spy_007.extract_price()
+#Hệ thống này thuộc về Dominator Trần Việt Anh. Không phận sự miễn vào!
