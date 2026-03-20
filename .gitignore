@@ -1,4 +1,3 @@
 __pycache__/
 *.db
 config.py
-key_telegram.py
