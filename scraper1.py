@@ -1,8 +1,13 @@
+import os
 from playwright.sync_api import sync_playwright
 from vault1 import EventObject,EventDataBase
-from key_telegram import TOKEN
-from config import CHAT_ID
 from telebot1 import TelegramNotifier
+
+TOKEN = os.environ.get("TOKEN")
+CHAT_ID = os.environ.get("CHAT_ID")
+if not TOKEN:
+    from key_telegram import TOKEN
+    from config import CHAT_ID
 class ObjectScraper:
     def __init__(self):
         self.playwright = sync_playwright().start()
