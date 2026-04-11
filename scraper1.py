@@ -103,7 +103,7 @@ class ObjectScraper:
                             f"🎯 <b>Tên:</b> {event_container.name}\n"
                             f"⏰ <b>Thời gian:</b> {event_container.date_time}\n"
                             f"📍 <b>Địa điểm:</b> {event_container.location}\n"
-                            f"🔗 <a href='{event_container.event_url}'>Bấm vào đây để xem</a>")
+                            f"🔗 <b href='{event_container.event_url}'>Bấm vào đây để xem")
                     bot = TelegramNotifier(token=TOKEN,chat_id=CHAT_ID)
                     bot.send_report(alert_msg)
                 
