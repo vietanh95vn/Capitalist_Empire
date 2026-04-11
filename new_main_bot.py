@@ -44,7 +44,7 @@ class FinancialWatchdog:
 
         # Cứ 10 giây báo cáo 1 lần (Để test cho nhanh, thực tế sẽ là 3600 giây)
             time.sleep(10)
-        print("Chó săn đang ngửi mùi thị trường...")
+            print("Chó săn đang ngửi mùi thị trường...")
             for stock in TREASURE:
                 gia_moi = hunt_stock(stock)
                 gia_cu = lay_gia_cu(stock)

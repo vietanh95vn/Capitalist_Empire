@@ -1,11 +1,11 @@
 # ==========================================
 # config.py - Kho Dữ Liệu Tĩnh của Tư Bản
 # ==========================================
-from key_telegram import key # Gọi thợ làm chìa khóa
+from key_telegram import TOKEN # Gọi thợ làm chìa khóa
 
 # 1. Chìa khóa Mạng lưới
 
-TOKEN = key()
+key_telegram = TOKEN
 
 # 2. Sổ tay Tài sản của CFO
 TREASURE = {
