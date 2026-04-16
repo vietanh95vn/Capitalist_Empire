@@ -14,4 +14,4 @@ TREASURE = {
     "SOLUSDT": 150,
     "BNBUSDT": 10
 }
-CHAT_ID= ""
+CHAT_ID= "6297429333"

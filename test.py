@@ -1,7 +1,6 @@
 import sqlite3
-
-conn = sqlite3.connect("ebay.db")
+conn = sqlite3.connect("PhongVu_Tracker.db")
 cursor = conn.cursor()
-cursor.execute("DELETE FROM data_ebay")
+cursor.execute("DELETE FROM tablets")
 conn.commit()
 conn.close()
