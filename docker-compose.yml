@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  # 1. THE SERVING LAYER (FastAPI)
+  api-server:
+    build: .
+    container_name: empire-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data_vault:/app/data_vault
+    # Overriding the CMD to explicitly run the API
+    command: uvicorn serving_layer.api:app --host 0.0.0.0 --port 8000
+    restart: unless-stopped # Fail-Safe: Tự động khởi động lại nếu bị sập
+
+  # 2. THE INGESTION ENGINE (Playwright Scraper)
+  scraper-worker:
+    build: .
+    container_name: empire-worker
+    volumes:
+      - ./data_vault:/app/data_vault
+    # Overriding the CMD to explicitly run the Continuous Worker
+    command: python ingestion_engine/scraper.py
+    env_file:
+      - .env # Inject Telegram credentials into the container
+    restart: unless-stopped
+    depends_on:
+      - api-server # Đảm bảo API chạy trước khi Scraper bắt đầu
